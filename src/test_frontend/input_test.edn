@@ -1,0 +1,68 @@
+;(ns test-frontend.input-test)
+
+;; input collection
+[{:test-suite-id "ts-id 1"
+  :test-suite-name "anonymous user"
+  :test-suite-description "test suite for anonymous user"
+  :test-suite-browser :firefox
+  :test-suite-url nil  ; https://esa-14.vm.esrt.cloud.sbrf.ru/verita/ or data:,
+  :test-suite-set [{:test-case-id "tc-id 1"
+                    :test-case-name "go to Verita"
+                    :test-case-description "test case for connecting to the host"
+                    :test-case-set [{:test-step-id "t-id 1.1"
+                                     :test-step-text "wait..."
+                                     :expect "nil"
+                                     :test-function wait
+                                     :el-query 21
+                                     :func-opt nil}]}
+
+                   {:test-case-id "tc-id 2"
+                    :test-case-name "create NS"
+                    :test-case-description "test case for create new NS by anonymous user"
+                    :test-case-set [
+                                    {:test-step-id "t-id 2.1"
+                                     :test-step-text "create NS is False?"
+                                     :expect false
+                                     :test-function has-text?
+                                     :el-query "Для создания нового пространства имен выполните вход в систему"
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 2.2"
+                                     :test-step-text "click for create"
+                                     :expect nil
+                                     :test-function click
+                                     :el-query [{:tag :li :id "create-ns"}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 2.3"
+                                     :test-step-text "create NS is True?"
+                                     :expect true
+                                     :test-function has-text?
+                                     :el-query "Для создания нового пространства имен выполните вход в систему"
+                                     :func-opt nil}]}
+                   {:test-case-id "tc-id 3"
+                    :test-case-name "call view NS"
+                    :test-case-description "test case for view NS by anonymous user"
+                    :test-case-set [
+                                    {:test-step-id "t-id 3.1"
+                                     :test-step-text "view of side panel is False?"
+                                     :expect false
+                                     :test-function visible?
+                                     :el-query [{:tag :aside :id "main-sider"}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 3.2"
+                                     :test-step-text "click on workspace button"
+                                     :expect nil
+                                     :test-function click
+                                     :el-query [{:tag :li :id "workspace"} {:tag :a}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 3.3"
+                                     :test-step-text "wait..."
+                                     :expect nil
+                                     :test-function wait-visible
+                                     :el-query {:tag :div :id "main-sider__not-collapsed-tree"}
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 3.4"
+                                     :test-step-text "view of side panel is True?"
+                                     :expect true
+                                     :test-function visible?
+                                     :el-query [{:tag :aside :id "main-sider"}]
+                                     :func-opt nil}]}]}]

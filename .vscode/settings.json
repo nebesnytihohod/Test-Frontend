@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#241F77",
+        "titleBar.activeBackground": "#332BA7",
+        "titleBar.activeForeground": "#FBFBFE"
+    }
+}
