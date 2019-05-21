@@ -49,46 +49,126 @@
   [driver-name]
   (let [driver (driver-name)]
          ;; ---===test suite for anonymous user===---
-    (log! "1. go to" "tc-1" "test case 1" 1 "test case for connecting to the host" "nil"
+    (log! "1. go to"
+          "tc-1"
+          "test case 1"
+          1
+          "test case for connecting to the host"
+          "nil"
           go driver "https://esa-14.vm.esrt.cloud.sbrf.ru/verita/")
-    (log! "2. wait..." "tc-1" "test case 1" 2 "test case for connecting to the host" "nil"
+    (log! "2. wait..."
+          "tc-1"
+          "test case 1"
+          2
+          "test case for connecting to the host"
+          "nil"
           wait-visible driver [{:tag :div :class "menu"} {:tag :li :class "menu__nav__nav-item"}])
 
-    (log! "3. False? " "tc-2" "test case 2" 3 "test case for create new NS by anonymous user" "false"
+    (log! "3. False? "
+          "tc-2"
+          "test case 2"
+          3
+          "test case for create new NS by anonymous user"
+          "false"
           has-text? driver "Для создания нового пространства имен выполните вход в систему")  ; expect = false
-    (log! "4. click" "tc-2" "test case 2" 4 "test case for create new NS by anonymous user" "nil"
+    (log! "4. click"
+          "tc-2"
+          "test case 2"
+          4
+          "test case for create new NS by anonymous user"
+          "nil"
           click driver [{:tag :li :id "create-ns"}])
-    (log! "5. True? " "tc-2" "test case 2" 5 "test case for create new NS by anonymous user" "true"
+    (log! "5. True? "
+          "tc-2"
+          "test case 2"
+          5
+          "test case for create new NS by anonymous user"
+          "true"
           has-text? driver "Для создания нового пространства имен выполните вход в систему")  ; expect = true
 
-    (log! "6. False? " "tc-id" "tc-name" "t-s" "description" "v-expect"
+    (log! "6. False? "
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "description"
+          "v-expect"
           visible? driver [{:tag :aside :id "main-sider"}])  ; expect = false
-    (log! "7. click" "tc-id" "tc-name" "t-s" "description" "v-expect"
+    (log! "7. click"
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "description"
+          "v-expect"
           click driver [{:tag :li :id "workspace"} {:tag :a}])
-    (log! "8. wait..." "tc-id" "tc-name" "t-s" "description" "v-expect"
+    (log! "8. wait..."
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "description"
+          "v-expect"
           wait-visible driver {:tag :div :id "main-sider__not-collapsed-tree"})
-    (log! "9. True? " "tc-id" "tc-name" "t-s" "description" "v-expect"
+    (log! "9. True? "
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "description"
+          "v-expect"
           visible? driver [{:tag :aside :id "main-sider"}])  ; expect = true
 
     ;; test case for close/open side panel with namespace
-    (log! "10. False? " "tc-id" "tc-name" "t-s" "test case for close/open side panel with namespace" "false"
+    (log! "10. False? "
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for close/open side panel with namespace"
+          "false"
           has-class? driver [{:tag :aside :id "main-sider"}] "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger")  ; expect = false
-    (log! "11. click" "tc-id" "tc-name" "t-s" "test case for close/open side panel with namespace" "v-expect"
+    (log! "11. click"
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for close/open side panel with namespace"
+          "v-expect"
           click driver [{:tag :div :class "ant-layout-sider-trigger"}])
     (wait 3)
-    (log! "12. True? " "tc-id" "tc-name" "t-s" "test case for close/open side panel with namespace" "true"
+    (log! "12. True? "
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for close/open side panel with namespace"
+          "true"
           has-class? driver [{:tag :aside :id "main-sider"}] "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger")  ; expect = true
-    (log! "13. click" "tc-id" "tc-name" "t-s" "test case for close/open side panel with namespace" "v-expect"
+    (log! "13. click"
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for close/open side panel with namespace"
+          "v-expect"
           click driver [{:tag :div :class "ant-layout-sider-trigger"}])
     (wait 3)
-    (log! "14. False? " "tc-id" "tc-name" "t-s" "test case for close/open side panel with namespace" "false"
+    (log! "14. False? "
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for close/open side panel with namespace"
+          "false"
           has-class? driver [{:tag :aside :id "main-sider"}] "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger")  ; expect = false
 
     ;; test case for view tree namespaces
     ;(click driver {:tag :i :class "anticon anticon-plus-square ant-tree-switcher-line-icon"})  ; циклически только открывает любые ветви дерева, но не закрывает
-    (log! "15. click" "tc-id" "tc-name" "t-s" "test case for view tree namespaces" "v-expect"
+    (log! "15. click"
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for view tree namespaces"
+          "v-expect"
           click driver [{:xpath ".//*[@id='main-sider__not-collapsed-tree']/ul/li/span[1]"}])  ; click driver on 1st level folding icon for expand or collapse
-    (log! "16. wait..." "tc-id" "tc-name" "t-s" "test case for view tree namespaces" "v-expect"
+    (log! "16. wait..."
+          "tc-id"
+          "tc-name"
+          "t-s"
+          "test case for view tree namespaces"
+          "v-expect"
           wait-visible driver {:tag :ul :class "ant-tree-child-tree ant-tree-child-tree-open"})  ; zone for expanded tree 2nd level
 
     (log! "17. click" "tc-id" "tc-name" "t-s" "test case for view tree namespaces" "v-expect"
@@ -532,7 +612,7 @@
     (log! "182. Attr is " "tc-id" "tc-name" "t-s" "description" "v-expect"
           get-element-attr driver [{:xpath ".//*[@id='main-sider__not-collapsed-tree']/ul/li/ul/li[1]/span[1]"} {:tag :i}] :aria-label)  ; expect= "icon: file"
     (log! "183. click" "tc-id" "tc-name" "t-s" "description" "v-expect"
-          click driver [{:tag :span :title "domain"}])
+          click driver [{:xpath ".//*[@id='main-sider__not-collapsed-tree']/ul/li/ul/li[1]"} {:tag :span :title "domain"}])
     (log! "184. URL " "tc-id" "tc-name" "t-s" "description" "v-expect"
           get-url driver)  ; expect = "https://esa-14.vm.esrt.cloud.sbrf.ru/verita/#/specs/sbrf/domain"
     (log! "185. Breadcrumb full string is " "tc-id" "tc-name" "t-s" "description" "v-expect"

@@ -4,16 +4,16 @@
 [{:test-suite-id "ts-id 1"
   :test-suite-name "anonymous user"
   :test-suite-description "test suite for anonymous user"
-  :test-suite-browser :firefox
-  :test-suite-url nil  ; https://esa-14.vm.esrt.cloud.sbrf.ru/verita/ or data:,
+  :test-suite-browser :chrome
+  :test-suite-url "https://esa-14.vm.esrt.cloud.sbrf.ru/verita/"  ; https://esa-14.vm.esrt.cloud.sbrf.ru/verita/ or nil or data:,
   :test-suite-set [{:test-case-id "tc-id 1"
                     :test-case-name "go to Verita"
                     :test-case-description "test case for connecting to the host"
                     :test-case-set [{:test-step-id "t-id 1.1"
                                      :test-step-text "wait..."
                                      :expect "nil"
-                                     :test-function wait
-                                     :el-query 21
+                                     :test-function wait-visible
+                                     :el-query [{:tag :div :class "menu"} {:tag :li :class "menu__nav__nav-item"}]
                                      :func-opt nil}]}
 
                    {:test-case-id "tc-id 2"
@@ -65,4 +65,164 @@
                                      :expect true
                                      :test-function visible?
                                      :el-query [{:tag :aside :id "main-sider"}]
-                                     :func-opt nil}]}]}]
+                                     :func-opt nil}]}
+                   {:test-case-id "tc-id 4"
+                    :test-case-name "test left side panel"
+                    :test-case-description "test case for close/open side panel with namespace"
+                    :test-case-set [
+                                    {:test-step-id "t-id 4.1"
+                                     :test-step-text "view of side panel is False?"
+                                     :expect false
+                                     :test-function has-class?
+                                     :el-query [{:tag :aside :id "main-sider"}]
+                                     :func-opt "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger"}
+                                    {:test-step-id "t-id 4.2"
+                                     :test-step-text "click..."
+                                     :expect nil
+                                     :test-function click
+                                     :el-query [{:tag :div :class "ant-layout-sider-trigger"}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 4.3"
+                                     :test-step-text "wait..."
+                                     :expect nil
+                                     :test-function wait
+                                     :el-query 3
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 4.4"
+                                     :test-step-text "True?"
+                                     :expect true
+                                     :test-function has-class?
+                                     :el-query [{:tag :aside :id "main-sider"}]
+                                     :func-opt "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger"}
+                                    {:test-step-id "t-id 4.5"
+                                     :test-step-text "click..."
+                                     :expect nil
+                                     :test-function click
+                                     :el-query [{:tag :div :class "ant-layout-sider-trigger"}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 4.6"
+                                     :test-step-text "wait..."
+                                     :expect nil
+                                     :test-function wait
+                                     :el-query 3
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 4.7"
+                                     :test-step-text "False?"
+                                     :expect false
+                                     :test-function has-class?
+                                     :el-query [{:tag :aside :id "main-sider"}]
+                                     :func-opt "main-sider ant-layout-sider ant-layout-sider-light ant-layout-sider-collapsed ant-layout-sider-has-trigger"}]}
+                   {:test-case-id "tc-id 5"
+                    :test-case-name "click on NS"
+                    :test-case-description "test case for view tree namespaces"
+                    :test-case-set [
+                                    {:test-step-id "t-id 5.1"
+                                     :test-step-text "click driver on 1st level folding icon for expand or collapse"
+                                     :expect nil
+                                     :test-function click
+                                     :el-query [{:xpath ".//*[@id='main-sider__not-collapsed-tree']/ul/li/span[1]"}]
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 5.2"
+                                     :test-step-text "zone for expanded tree 2nd level"
+                                     :expect nil
+                                     :test-function wait-visible
+                                     :el-query {:tag :ul :class "ant-tree-child-tree ant-tree-child-tree-open"}
+                                     :func-opt nil}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}
+                                    {:test-step-id "t-id 5."
+                                     :test-step-text ""
+                                     :expect
+                                     :test-function
+                                     :el-query
+                                     :func-opt}]}]}]
+
+
