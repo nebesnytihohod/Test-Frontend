@@ -41,3 +41,13 @@
 
 {:browser driver
  :url go-url}
+
+;(defn write-edn
+;  "write output file in EDN-format"
+;  [target]
+;  (try
+;     (with-open [wrtr (io/writer target)]
+;       .writer wrtr)
+;
+;     (catch Exception e
+;       (println "ERROR=> " (.getMessage e)))))

@@ -4,14 +4,14 @@
 [{:test-suite-id "ts-id 1"
   :test-suite-name "anonymous user"
   :test-suite-description "test suite for anonymous user"
-  :test-suite-browser :chrome
+  :test-suite-browser chrome
   :test-suite-url "https://esa-14.vm.esrt.cloud.sbrf.ru/verita/"  ; https://esa-14.vm.esrt.cloud.sbrf.ru/verita/ or nil or data:,
   :test-suite-set [{:test-case-id "tc-id 1"
                     :test-case-name "go to Verita"
                     :test-case-description "test case for connecting to the host"
                     :test-case-set [{:test-step-id "t-id 1.1"
                                      :test-step-text "wait..."
-                                     :expect "nil"
+                                     :expect nil
                                      :test-function wait-visible
                                      :el-query [{:tag :div :class "menu"} {:tag :li :class "menu__nav__nav-item"}]
                                      :func-opt nil}]}
@@ -127,102 +127,102 @@
                                      :expect nil
                                      :test-function wait-visible
                                      :el-query {:tag :ul :class "ant-tree-child-tree ant-tree-child-tree-open"}
-                                     :func-opt nil}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}
-                                    {:test-step-id "t-id 5."
-                                     :test-step-text ""
-                                     :expect
-                                     :test-function
-                                     :el-query
-                                     :func-opt}]}]}]
+                                     :func-opt nil}]}]}]
+                                    ;{:test-step-id "t-id 5."}]}]}]
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}
+                                    ;{:test-step-id "t-id 5."
+                                    ; :test-step-text ""
+                                    ; :expect
+                                    ; :test-function
+                                    ; :el-query
+                                    ; :func-opt}]}]}]
 
 
